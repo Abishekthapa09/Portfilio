@@ -1,0 +1,1085 @@
+:root
+{
+    font-family: Nunito, sans-serif;
+    --white: white;
+    --black: black;
+    --transparent-black: rgba(0,0,0,0.9);
+    --blue-dark: rgb(3, 87, 147);
+    --blue-dark-transparent: rgba(20, 88, 198, 0.8);
+    --sky-blue-dark: rgb(20, 139, 230);
+    --sky-blue-darker: rgb(14, 65, 105);
+    --blue-light: rgb(190, 242, 253);
+    --light-black: rgb(222, 220, 220);
+    --greyish-black: rgba(194, 190, 190, 0.7);
+    --value: nothing;
+    --light-black: rgb(180, 180, 180);
+    --white-grey: rgb(239, 237, 237);
+    --white-grey-transparent: rgba(239, 237, 237, 0.9);
+}
+*
+{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body
+{
+    position: relative;
+    background-color: var(--white-grey);
+}
+body::after
+{
+    content: var(--value);
+    position : absolute;
+    background-color: var(--greyish-black);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+/*header part*/
+body > #sticky-top-part
+{
+    position: sticky;
+    background-color: var(--sky-blue-darker);
+    color: var(--white);
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 30px;
+    margin-top: 5px;
+    top: 0;
+    z-index: 2;/*when I set z-index: 1.5 it didn't work so avoid point values for z-index*/
+}
+#sticky-top-part > #hamburger
+{
+    cursor: pointer;
+    padding: 13px;
+}
+#sticky-top-part > #hamburger > span.hamb-line
+{
+    display: block;
+    padding: 1px 9px;
+    background-color: var(--white);
+    margin-bottom: 5px;
+}
+body > nav#sticky-top-part > ul#nav-list-fixed
+{
+    position: fixed;
+    /* margin-left: 20rem; */
+    top: 59px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    background-color: var(--white);
+    font-size: 15px;
+    padding: 10px 0px;
+    overflow: auto;
+    z-index: 2;
+    color: initial;
+}
+.capital
+{
+    text-transform: uppercase;
+}
+.capitalize
+{
+    text-transform: capitalize;
+}
+ul#nav-list-fixed li
+{
+    padding: 10px 25px;
+    cursor: pointer;
+    list-style-type: none;
+}
+ul#nav-list-fixed li a
+{
+    text-decoration: none;
+    color: inherit;
+}
+ul#nav-list-fixed li:hover
+{
+    color: var(--sky-blue-dark);
+}
+.active
+{
+    color: var(--blue-dark);
+}
+ul#nav-list-fixed li#first-drpdwn, #nav-list-fixed li#second-drpdwn
+{
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: center;
+}
+#first-drpdwn > i, #second-drpdwn > i
+{
+    padding-left: 8px;
+}
+ul#first-drpdwn-list, ul#second-drpdwn-list
+{
+    padding: 15px 0;
+    box-shadow: 0 0 8px 1px var(--blue-dark);
+    margin: 0 25px;
+}
+body > span#removeBtn
+{
+    position: fixed;
+    top: 0px;
+    right: 30px;
+    z-index: 1;
+    color: var(--white);
+    padding: 13px;
+    cursor: pointer;
+    z-index: 2;
+}
+body > span#removeBtn > i::before
+{
+    font-size: 1.6rem;
+}
+.show
+{
+    display: block;
+}
+.hide
+{
+    display: none;
+}
+header > div#intro-brief
+{
+    height: 90vh;
+    margin-top: -4px;
+    display: grid;
+    grid-template-rows: calc(50% - 1.5rem) calc(50% - 1.5rem);
+    justify-content: center;
+    text-align: center;
+    row-gap: 3rem;
+    font-weight: bold;
+    background-image:linear-gradient(rgba(14, 66, 105, 0), rgba(255, 255, 255, 0)),url('/background.jpg');
+    background-size: cover;
+    background-position: 48% 50%;
+    color: var(--black);
+}
+#intro-brief > p:first-child
+{
+    align-self: end;
+    font-size: 4rem;
+    animation: bottomToTop 1s forwards;
+}
+#intro-brief >p:last-child
+{
+    font-size: 1.3rem;
+}
+#intro-brief >p:last-child > span#profession
+{
+    border-right: 3px solid;
+    padding-right: 3px;
+    opacity: 0;
+    animation: bottomToTop 1s 0.5s forwards;
+}
+/*main*/
+main > a 
+{
+    display: inline-block;
+    position: fixed;
+    padding: 10px;
+    background-color: var(--blue-dark);
+    color: var(--white);
+    border-radius: 50%;
+    text-align: center;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 3;
+}
+main > a > i
+{
+    display: block;
+    width: 1.3rem;
+    line-height: 1.3rem;
+}
+main > a > i::before
+{
+    font-size: 1.2rem;
+}
+#intro-details, #services, #portfolio, #blog-section
+{
+    max-width: 500px;
+    margin: 0 auto;
+    padding-top: 120px;
+}
+#send-us-mssg > #get-in-touch, #send-us-mssg > #fill-form
+{
+    max-width: 500px;
+    margin: auto;
+}
+#work-exp, #supporters
+{
+    margin-top: 40px;
+}
+#intro-details, #services > #service-wrapper > .srvice, #portfolio > #portfolio-wrapper > .project, #blog-section > #blogs > .blog, #send-us-mssg #get-in-touch, #send-us-mssg #fill-form
+{
+    background-color: var(--white);
+}
+/*intro-details*/
+section#intro-details
+{
+    box-shadow: 0 0 5px 1px var(--greyish-black);
+    margin-top: 70px;
+}
+#intro-details > #name-skills > #pic-names
+{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 0 30px 40px;
+    justify-content: space-between;
+    column-gap: 10px;
+}
+#pic-names > img
+{
+    min-width: 100px;
+    max-width: 100%;
+    border-radius: 5px;
+}
+#pic-names > #name-and-more > p
+{
+    line-height: 2rem;
+}
+#name-skills > #skills
+{
+    padding: 0 20px;
+}
+#skills > .skill > span
+{
+    display: block;
+    margin: 20px 0 7px;
+}
+#skills > .skill > div.percentage-grid
+{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+#skills > .skill:first-of-type > div.percentage-grid
+{
+    grid-template-columns: 85% auto;
+}
+#skills > .skill:nth-of-type(2) > div.percentage-grid
+{
+    grid-template-columns: 75% auto;
+}
+#skills > .skill:nth-of-type(3) > div.percentage-grid
+{
+    grid-template-columns: 50% auto;
+}
+#skills > .skill:last-of-type > div.percentage-grid
+{
+    grid-template-columns: 90% auto;
+}
+
+#skills > .skill > div.percentage-grid > span
+{
+    display: block;
+    padding: 6px 0;
+}
+#skills > .skill > div.percentage-grid > span:first-child
+{
+    background-color: var(--sky-blue-dark);
+}
+#skills > .skill > div.percentage-grid > span:last-child
+{
+    background-color: var(--blue-light);
+}
+#intro-details > #about-me.right-column
+{
+    padding: 0 20px 70px;
+}
+#about-me > h1
+{
+    font-size: 2rem;
+    margin-bottom: 30px;
+    padding-top: 40px;
+}
+#about-me > h1::after
+{
+    content: "";
+    display: block;
+    width: 100px;
+    height: 3px;
+    margin-top: 7px;
+    background-color: var(--sky-blue-dark);
+}
+#about-me > p.about-para
+{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--light-black);
+    line-height: 1.8rem;
+    margin-bottom: 1.2rem;
+}
+/*services*/
+#services
+{
+    text-align: center;
+}
+#services > h1, #portfolio > h1, #blog-section > h1
+{
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+#services > span::after
+{
+    content: "";
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin: 20px auto;
+    background-color: var(--sky-blue-dark);
+}
+#services > #service-wrapper
+{
+
+}
+#services > #service-wrapper > .srvice
+{
+    margin-top: 50px;
+    padding: 35px 20px 60px;
+    border-radius: 1.2rem;
+    box-shadow: 0 2px 5px var(--greyish-black);
+}
+#services > #service-wrapper > .srvice > span.big-circle
+{
+    display: inline-block;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: var(--sky-blue-dark);
+    transition: background-color 0.5s;
+}
+#services > #service-wrapper > .srvice > .big-circle > i::before
+{
+    font-size: 2.2rem;
+    display: inline-block;
+    padding: 2rem;
+    border-radius: 50%;
+    background-color: var(--white);
+    transition: background-color 0.5s, color 0.5s;
+}
+#services .srvice:hover > span.big-circle
+{
+    background-color: var(--blue-light)!important;
+}
+#services .srvice:hover > span > i::before
+{
+    background-color: var(--sky-blue-dark) !important;
+    color: var(--white);
+}
+#services > #service-wrapper > .srvice > h2
+{
+    font-size: 1.3rem;
+    margin: 15px 0 25px; 
+}
+/*work and experienc*/
+#work-exp
+{
+    padding: 5.5rem 0;
+    border: 1px solid;
+    text-align: center;
+    background: linear-gradient(var(--blue-dark-transparent), var(--blue-dark-transparent)), url("/counters-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+}
+#work-exp > .accomplishment
+{
+    
+}
+#work-exp > .accomplishment > span.small-circle
+{
+    display: inline-block;
+    padding: 0.7rem;
+    background-image: radial-gradient(transparent 50%, var(--white-grey-transparent) 50%);
+    border-radius: 50%;
+}
+#work-exp > .accomplishment > span.small-circle > i::before
+{
+    display: inline-block;
+    width: 72px;
+    line-height: 72px;
+    font-size: 1.5rem;
+}
+#work-exp > .accomplishment > h3.num
+{
+    margin: 1.1rem 0;
+}
+#work-exp > .accomplishment > span:last-child
+{
+    display: inline-block;
+    margin-bottom: 0.6rem;
+}
+/*portfolio*/
+#portfolio
+{
+
+}
+#portfolio > h1, #blog-section > h1
+{
+    text-align: center;
+}
+#portfolio > span, #blog-section > span
+{
+    display: block;
+    text-align: center;
+}
+#portfolio > span::after, #blog-section > span::after
+{
+    content: '';
+    display: block;
+    width: 40px;
+    height: 5px;
+    background-color: var(--blue-dark);
+    margin: 15px auto;
+}
+#portfolio > #portfolio-wrapper
+{
+
+}
+#portfolio .project
+{
+    margin-top: 3rem;
+    box-shadow: 0 3px 5px var(--greyish-black);
+}
+#portfolio > #portfolio-wrapper > .project > .img-container
+{
+    overflow: hidden;
+}
+#portfolio > #portfolio-wrapper > .project:hover > .img-container > img
+{
+    transform: scale(1.4);
+}
+#portfolio .project > .img-container > img
+{
+    max-width: 100%;
+    transition: transform 1s;
+    cursor: pointer;
+}
+#portfolio .project > .project-desc
+{
+    padding: 25px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    row-gap: 0.7rem;
+    justify-content: space-between;
+}
+#portfolio .project > .project-desc > h3
+{
+    text-align: center;
+}
+#portfolio .project > .project-desc > span
+{
+    grid-row: 1/3;
+    grid-column: 2/3;
+    align-self: center;
+}
+#portfolio .project > .project-desc > span:hover
+{
+    cursor: pointer;
+}
+#portfolio .project > .project-desc > span > i::before
+{
+    font-size: 2.5rem;
+    color: var(--blue-dark);
+}
+#portfolio .project > .project-desc > p
+{
+    font-size: 13px;
+}
+#portfolio .project > .project-desc > p > span.project-category
+{
+    color: var(--blue-dark);
+}
+/* supporters
+#supporters
+{
+    padding: 5.5rem 0;
+    background: linear-gradient(var(--blue-dark-transparent), var(--blue-dark-transparent)), url('/overlay-bg.jpg');
+    background-size: cover;
+}
+#supporters > #supporter-container
+{
+    display: grid;
+    grid-template-columns: 100% 100% 100% 100%;
+    text-align: center;
+    overflow: hidden;
+}
+#supporter-container > .supporter
+/*{
+     padding: 0 5rem;
+    transition: transform 1s;
+    color: var(--white);
+    text-align: center;
+}
+#supporter-container > .supporter > img
+{
+    border-radius: 50%;
+}
+#supporter-container > .supporter > h1.name
+{
+    line-height: 4rem;
+}
+#supporter-container > .supporter > p
+{
+    max-width: 500px;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    margin: auto;
+}
+#supporters > #dot-container
+{
+    width: max-content;
+    margin: 2rem auto;
+}
+#supporters > #dot-container > .dot
+{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 2px;
+    background-color: var(--greyish-black);
+    cursor: pointer;
+}
+#supporters > #dot-container > .dot.active
+{
+    background-color: var(--white);
+} */
+/*blog-section*/
+/* #blog-section > span::after
+{
+    margin-bottom: 4rem;
+}
+#blog-section > #blogs
+{
+    padding-bottom: 70px;
+}
+#blog-section > #blogs > .blog
+{
+    box-shadow: 0 3px 5px 1px var(--greyish-black);
+}
+#blogs > .blog > .img-text
+{
+    position: relative;
+    border-top-right-radius: 5px;
+    z-index: 0.5;
+}
+#blogs > .blog > .img-text > img
+{
+    border-top-right-radius: 5px;
+    max-width: 100%;
+}
+#blogs > .blog > .img-text > span
+{
+    font-size: 0.7rem;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: var(--sky-blue-dark);
+    color: var(--white);
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -50%);
+}
+
+/*what's the extra space which is at the bottom of the image here which might be due to the absolute positioning of the element which was previously residing there*/
+/*
+#blogs > .blog > .description
+{
+    padding: 30px 15px;
+    border-left: 1px solid var(--greyish-black);
+    border-right: 1px solid var(--greyish-black);
+}
+#blogs > .blog > .description > h2
+{
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+#blogs > .blog > .description > p
+{
+
+}
+#blogs > .blog > .blog-uploader
+{
+    padding: 8px 15px;
+    border: 1px solid var(--greyish-black);
+    background-color: var(--white-grey);
+    display: grid;
+    align-items: center;
+    grid-template-columns: 0.1fr 0.3fr auto;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    column-gap: 4px;
+}
+#blogs > .blog > .blog-uploader > img
+{
+    width: 1.8rem;
+    border-radius: 50%;
+}
+#blogs > .blog > .blog-uploader > span:first-child
+{
+
+}
+#blogs > .blog > .blog-uploader > span:last-child
+{
+    margin-left: auto;
+}
+#blogs > .blog > .blog-uploader > span:last-child > i::before
+{
+    color: var(--light-black)
+} */
+/*send us message section*/
+section#send-us-mssg
+{
+    padding: 120px 0 50px;
+    background: linear-gradient(var(--blue-dark-transparent),var(--blue-dark-transparent)), url("/design-overlay.jpg");
+    background-size: cover;
+    box-shadow: 0 4px 6px 1px var(--light-black);
+}
+section#send-us-mssg > #form-GIT-wrapper
+{
+    margin: auto;
+}
+#send-us-mssg #fill-form
+{
+    padding: 55px 18px 0;
+}
+#send-us-mssg #get-in-touch
+{
+    padding: 25px 18px 55px;
+}
+
+#send-us-mssg #fill-form > h1 , #send-us-mssg #get-in-touch > h1
+{
+    font-size: 2rem;
+    padding-bottom: 27px;
+}
+#send-us-mssg #fill-form > h1::after, #send-us-mssg #get-in-touch > h1::after
+{
+    content: "";
+    display: block;
+    width: 100px;
+    height: 3px;
+    background-color: var(--blue-dark);
+    margin-top: 10px;
+}
+#fill-form > form > input:not(#fill-form > form > input[type="submit"])
+{
+    display: block;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 17px;
+}
+#fill-form > form > textarea
+{
+    width: 100%;
+    padding: 10px;
+}
+#fill-form > form > input[type="submit"]
+{
+    display: block;
+    padding: 15px 20px;
+    background-color: var(--blue-dark);
+    color: var(--white);
+    font-size: 1.2rem;
+    border-radius: 40px;
+    margin: 25px auto 0;
+    border: 0px;
+}
+#fill-form > form >input:focus, #fill-form > form > textarea:focus
+{
+    outline: 4px solid var(--blue-light);
+}
+#fill-form > form > input[type="submit"]:hover
+{
+    /* box-shadow: 0 0 5px 4px var(--blue-light); */
+    outline: 4px solid var(--blue-light);
+    opacity: 0.8;
+}
+#get-in-touch > p:first-of-type
+{
+    padding: 10px 0 25px;
+}
+#get-in-touch > p.GIT-para
+{
+    padding-bottom: 15px;
+}
+#get-in-touch > p.GIT-para > span
+{
+
+}
+#get-in-touch > p.GIT-para > span > i::before
+{
+    color: var(--blue-dark);
+    margin-right: 10px;
+
+}
+#get-in-touch >.i-container,#get-in-touch>.i-container:active
+{
+    display: inline-block;
+    padding: 4px;
+    background-color: var(--blue-dark);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.5s;
+    text-decoration:none ;
+}
+#get-in-touch >.i-container > i
+{
+    display: block;
+    padding: 8px;
+    background-color: var(--white);
+    border-radius: 50%;
+    transition: all 0.5s;
+}
+#get-in-touch >.i-container > i::before
+{
+    font-size: 1.2rem;
+    color: var(--blue-dark);
+}
+#get-in-touch >.i-container:hover
+{
+    background-color: var(--blue-light);
+}
+#get-in-touch >.i-container:hover > i
+{
+    background-color: var(--blue-dark);
+}
+#get-in-touch >.i-container:hover > i::before
+{
+    color: var(--white);
+}
+/*footer*/
+footer
+{
+    background-color: var(--sky-blue-darker);
+    color: var(--white);
+    padding: 30px 0;
+    text-align: center;
+}
+footer > p
+{
+    padding-bottom: 10px;
+}
+@media only screen and (max-width: 300px)
+{
+    body > #sticky-top-part
+    {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+    #sticky-top-part > h1
+    {
+        font-size: 1rem;
+    }
+    header > nav > ul#nav-list-fixed
+    {
+        font-size: 12px;
+    }
+    ul#first-drpdwn-list, ul#second-drpdwn-list
+    {
+        padding: 15px 0;
+        margin: 0 8px;
+    }
+    main > a
+    {
+        right: 1rem;
+        bottom: 1rem;
+    }
+    #intro-brief > p:first-child
+    {
+        font-size: 2rem;
+    }
+    #intro-brief >p:last-child
+    {
+        font-size: 1rem;
+    }
+    #intro-details > #name-skills > #pic-names
+    {
+        grid-template-columns: unset;
+        grid-template-rows: auto auto;
+        row-gap: 40px;
+        padding-left: 8px;
+        padding-right: 8px;
+        font-size: 0.85rem;
+    }
+    #intro-details > #name-skills > #pic-names > #name-and-more > p
+    {
+        font-size: 0.75rem;
+    }
+    #skills
+    {
+        font-size: 0.85rem;
+    }
+    #pic-names > img
+    {
+        max-width: 120px;
+    }
+    #about-me > h1
+    {
+        font-size: 1.5rem;
+    }
+    #about-me > p.about-para
+    {
+        font-size: 1rem;
+    }
+    #services > h1, #portfolio > h1, #blog-section > h1
+    {
+        font-size: 1.5rem;
+    }
+    .srvice
+    {
+        padding: 10px !important;
+    }
+    #services > #service-wrapper > .srvice > span.big-circle
+    {
+        padding: 5px;
+    }
+    #services > #service-wrapper > .srvice > .big-circle > i::before
+    {
+        font-size: 1.8rem;
+        padding: 1.3rem;
+    }
+    #services > #service-wrapper > .srvice > h2, section#send-us-mssg #fill-form > h1 , section#send-us-mssg #get-in-touch > h1
+    {
+        font-size: 1rem !important;
+    }
+    #portfolio > span, #blog-section > span, #services > span, #services > #service-wrapper > .srvice > p, #work-exp
+    {
+        font-size: 0.85rem;
+    }
+    #work-exp > .accomplishment > span.small-circle
+    {
+        padding: 0.3rem;
+    }
+    #work-exp > .accomplishment > span.small-circle > i::before
+    {
+        font-size: 1rem;
+    }
+    #portfolio .project > .project-desc > h3, #blogs > .blog > .description > h2, #supporter-container > .supporter > h1.name
+    {
+        font-size: 0.9rem;
+    }
+    #portfolio .project > .project-desc > p, #blogs > .blog > .description > p, #blogs > .blog > .blog-uploader, #get-in-touch > p:first-of-type, #get-in-touch > p.GIT-para, #get-in-touch > p.GIT-para > span > i::before, footer
+    {
+        font-size: 0.75rem;
+    }
+    #portfolio .project > .project-desc > span > i::before
+    {
+        font-size: 2rem;
+    }
+    #supporter-container > .supporter > img
+    {
+        max-width: 100px;
+    }
+    #supporter-container > .supporter > p
+    {
+        font-size: 0.8rem;
+        line-height: 1.5rem;
+    }
+    #supporters > #dot-container > .dot
+    {
+        width: 6px;
+        height: 6px;
+    }
+    #fill-form, #get-in-touch
+    {
+        padding-right: 4px !important;
+        padding-left: 4px !important;
+    }
+    #fill-form > form > input:not(#fill-form > form > input[type="submit"])
+    {
+        padding: 5px;
+    }
+    #fill-form > form > textarea
+    {
+        padding: 5px;
+    }
+    #fill-form > form > input[type="submit"]
+    {
+        padding: 8px 15px;
+        font-size: 0.85rem;
+    }
+    #get-in-touch > span.i-container
+    {
+        padding: 3px;
+    }
+    #get-in-touch > span.i-container > i
+    {
+        padding: 5px;
+    }
+    #get-in-touch > span.i-container > i::before
+    {
+        font-size: 0.95rem;
+    }
+}
+
+@media only screen and (min-width: 575px)
+{
+    #work-exp
+    {
+        display: grid;
+        grid-template-columns: 22% 22% 22% 22%;
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width: 772px)
+{
+    #intro-brief >p:last-child
+    {
+        font-size: 2rem;
+    }
+    section#intro-details
+    {
+        display: grid;
+        grid-template-columns: auto auto;
+        width: 92%;
+    }
+    section#intro-details, #send-us-mssg > #form-GIT-wrapper,  #services, #portfolio, #blog-section
+    {
+        max-width: 92%;
+    }
+    #services > #service-wrapper, #portfolio > #portfolio-wrapper, #blog-section > #blogs
+    {
+        display: grid;
+        grid-template-columns: calc((100% / 3) - (50px / 3)) calc((100% / 3) - (50px / 3)) calc((100% / 3) - (50px / 3));
+        column-gap: 25px;
+    }
+    #send-us-mssg > #form-GIT-wrapper
+    {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+    #send-us-mssg #fill-form
+    {
+        padding: 55px 18px;
+    }
+    #send-us-mssg #get-in-touch
+    {
+        padding: 55px 18px;
+    }
+    section#send-us-mssg, #supporters, #work-exp
+    {
+        background-attachment: fixed;
+    }
+}
+
+@media only screen and (min-width: 992px)
+{
+    /*for navbar responsiveness here*/
+    body > #sticky-top-part
+    {
+        margin: 0;
+        justify-content: space-between;
+        grid-template-columns: 180px auto;
+        padding-left: 90px;
+    }
+    body > nav#sticky-top-part > ul#nav-list-fixed
+    {
+        position: static;
+        display: grid;
+        grid-template-columns: auto auto auto auto auto auto auto;
+        background-color: transparent;
+        color: inherit;
+        font-weight: bold;
+        overflow: hidden;
+    }
+    .active
+    {
+        color: inherit;
+    }
+    .active::after
+    {
+        content: "";
+        display: block;
+        width: 0rem;
+        height: 3px;
+        background-color: var(--white);
+        transition: width 0.6s;
+    }
+    ul#nav-list-fixed > li, ul#nav-list-fixed > div > li
+    {
+        /* background-color: inherit; */
+    }
+    ul#nav-list-fixed > li:hover, ul#nav-list-fixed > div > li:hover
+    {
+        color: inherit;
+    }
+    ul#nav-list-fixed > li::after, ul#nav-list-fixed > div > li::after
+    {
+        content: "";
+        display: block;
+        width: 0rem;
+        height: 3px;
+        background-color: var(--white);
+        transition: width 1s;
+        margin-top: 5px;
+    }
+    ul#nav-list-fixed > li:hover::after, ul#nav-list-fixed > div > li:hover::after
+    {
+        width: 2.5rem;
+    }
+    ul#first-drpdwn-list, ul#second-drpdwn-list
+    {
+        position: absolute;
+        width: max-content;
+        display: none;
+        background-color: var(--transparent-black);
+    }
+    ul#nav-list-fixed > div#dropdown-container1:hover > ul#first-drpdwn-list, ul#nav-list-fixed div#dropdown-container2:hover > ul#second-drpdwn-list
+    {
+        display: block;
+    }
+    ul#nav-list-fixed > div#dropdown-container1, ul#nav-list-fixed > div#dropdown-container1 > ul#first-drpdwn-list > div#dropdown-container2
+    {
+        /* position: relative; */
+    }
+    ul#first-drpdwn-list/*this is positioned relative to its parent nav sticky part*/
+    {
+        top: 80%;
+        /* left: 70%; */
+    }
+    ul#second-drpdwn-list/*positioned relative to its parent ul#first-drpdwn-list*/
+    {
+        top: 30%;
+        right: 87%;
+    }
+    #about-me > h1
+    {
+        padding: 0;
+    }
+    .skill:last-child
+    {
+        padding-bottom: 40px;
+    }
+}
+
+/*for animation*/
+#intro-brief > p:first-child, #pic-names > img, #pic-names > #name-and-more > p, #skills > b, #about-me > h1, #about-me > p.about-para, #services > h1, #portfolio > h1, #blog-section > h1, #services > span, #portfolio > span, #blog-section > span, #send-us-mssg #fill-form > h1, #send-us-mssg #get-in-touch > h1, #fill-form > form > textarea, #get-in-touch > p:first-of-type, footer, #skills > .skill > span, #services > #service-wrapper > .srvice, #work-exp > .accomplishment > span.small-circle, #portfolio > #portfolio-wrapper > .project, #supporter-container, #blog-section > #blogs > .blog, #fill-form > form > input, #get-in-touch > p.GIT-para, #get-in-touch > p.GIT-para > span, #get-in-touch > span.i-container
+{
+    transform: translateY(50%);
+    opacity: 0;
+}
+
+@keyframes bottomToTop
+{
+    0%
+    {
+        /* transform: translateY(50%);
+        opacity: 0; */
+    }
+    100%
+    {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
